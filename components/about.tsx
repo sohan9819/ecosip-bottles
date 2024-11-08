@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { useSectionInView } from '@/lib/hooks';
 import { useActiveSectionContext } from '@/context/active-section-context';
 import { useInView } from 'react-intersection-observer';
-import 'react-vertical-timeline-component/style.min.css';
+
 import { aboutData } from '@/lib/data';
 import {
   VerticalTimeline,

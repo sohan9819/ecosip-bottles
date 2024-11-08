@@ -26,7 +26,7 @@ export const sendEmail = async (formData: FormData) => {
   try {
     const data = await resend.emails.send({
       from: 'EcoSip Contact Form <onboarding@resend.dev>',
-      to: 'ankushshetty168@gmail.com',
+      to: 'sohanshetty2001@gmail.com',
       subject: 'Customer from EcoSip',
       reply_to: senderEmail,
       react: React.createElement(ContactFormEmail, {

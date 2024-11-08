@@ -60,41 +60,6 @@ export const aboutData = [
   },
 ] as const;
 
-export const experiencesData = [
-  {
-    title: 'Software Engineering Internship',
-    location: 'JPMorgan Chase & Co.',
-    description:
-      'I worked on fixing bugs and issues in an open-source project named perspective, I also enhanced my skills in Python, Git, and GitHub during this internship',
-    icon: React.createElement(LuLaptop),
-    date: '2020',
-  },
-  {
-    title: 'Advanced Frontend Developer',
-    location: 'NEOG bootcamp',
-    description:
-      'I completed my advanced frontend Bootcamp in 6 months where I also worked on multiple projects to sharpen my skills.',
-    icon: React.createElement(LuLaptop),
-    date: '2022',
-  },
-  {
-    title: 'B.Tech Industrial Instrumentation',
-    location: 'Mumbai, India',
-    description:
-      "I graduated from Vivekanand Eduation Society's Institute of Technology(VESIT)",
-    icon: React.createElement(LuGraduationCap),
-    date: '2019 - 2023',
-  },
-  {
-    title: 'Frontend Developer',
-    location: 'Mumbai, India',
-    description:
-      "I'm now a Frontend developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
-    icon: React.createElement(FaReact),
-    date: '2023 - present',
-  },
-] as const;
-
 export const projectsData = [
   {
     title: 'Natural Beauty',
@@ -120,30 +85,6 @@ export const projectsData = [
     tags: ['HTML', 'SCSS', 'JavaScript', 'Netlify'],
     imageUrl: AlphaUI,
   },
-] as const;
-
-export const skillsData = [
-  'HTML',
-  'CSS',
-  'SCSS',
-  'JavaScript',
-  'TypeScript',
-  'React',
-  'Next.js',
-  'Node.js',
-  'Git',
-  'Tailwind',
-  'Prisma',
-  'MongoDB',
-  'Redux',
-  'T3',
-  'Express',
-  'PostgreSQL',
-  'Firebase',
-  'Python',
-  'Django',
-  'FastApi',
-  'Framer Motion',
 ] as const;
 
 export const servicesData = [

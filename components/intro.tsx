@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { BsArrowRight, BsLinkedin } from 'react-icons/bs';
@@ -11,10 +11,19 @@ import { useSectionInView } from '@/lib/hooks';
 import { useActiveSectionContext } from '@/context/active-section-context';
 import BambooBottleImage from '@/public/BambooBottle.webp';
 import HackerText from './hackerText';
+import { textTypingEffect } from '@/lib/utils';
 
 export default function Intro() {
   const { ref } = useSectionInView('Home', 0.5);
+  const tagLineRef = useRef<HTMLElement>(null);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+
+  useEffect(() => {
+    textTypingEffect(
+      tagLineRef.current as HTMLElement,
+      ": Nature's Hydration Solution",
+    );
+  }, []);
 
   return (
     <section
@@ -47,24 +56,13 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}>
         {/* <HackerText>Hello world;</HackerText> */}
-        EcoSip: Nature's Hydration Solution
+        EcoSip
+        <span ref={tagLineRef} />
       </motion.h1>
       <motion.h1
         className='mb-10 mt-4 px-4 text-base !leading-[1.5] text-left'
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}>
-        {/* I&apos;m{' '}
-        <HackerText className='border-b-2 border-dotted border-neutral-700'>
-          Sohan Shetty
-        </HackerText>
-        , a{' '}
-        <HackerText className='border-b-2 border-dotted border-neutral-700'>
-          Front-end engineer
-        </HackerText>
-        . My focus is on building neat user interfaces that are highly
-        functional, interactive and serve the experience of the application.
-        Aside building for the web, I deeply enjoy studying Robotics, Astronomy
-        and related disciplines. */}
         Sip Sustainably, Stay Hydrated with EcoSip's eco-friendly bamboo
         bottles.
       </motion.h1>

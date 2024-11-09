@@ -15,15 +15,7 @@ import { textTypingEffect } from '@/lib/utils';
 
 export default function Intro() {
   const { ref } = useSectionInView('Home', 0.5);
-  const tagLineRef = useRef<HTMLElement>(null);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
-
-  useEffect(() => {
-    textTypingEffect(
-      tagLineRef.current as HTMLElement,
-      ": Nature's Hydration Solution",
-    );
-  }, []);
 
   return (
     <section
@@ -52,12 +44,10 @@ export default function Intro() {
       </div>
 
       <motion.h1
-        className='mb-6 mt-4 px-4 text-2xl lg:text-8xl md:text-4xl !leading-[1.5] text-left'
+        className='mb-6 mt-4 px-4 text-2xl lg:text-6xl md:text-4xl !leading-[1.5] text-left'
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}>
-        {/* <HackerText>Hello world;</HackerText> */}
-        EcoSip
-        <span ref={tagLineRef} />
+        EcoSip: Nature's Hydration Solution
       </motion.h1>
       <motion.h1
         className='mb-10 mt-4 px-4 text-base !leading-[1.5] text-left'
@@ -76,20 +66,19 @@ export default function Intro() {
         }}>
         <Link
           href='#contact'
-          className='group px-4 py-1 rounded-lg bg-neutral-900 text-white hover:bg-neutral-950 transition-all flex items-center gap-2 justify-center dark:bg-white dark:text-neutral-900'
-          onClick={() => {
-            setActiveSection('Contact');
-            setTimeOfLastClick(Date.now());
-          }}>
+          className='group px-4 py-1 rounded-lg bg-neutral-900 text-white hover:bg-neutral-950 transition-all flex items-center gap-2 justify-center dark:bg-white dark:text-neutral-900'>
           Shop Now
           {/* <BsArrowRight className='opacity-70 group-hover:translate-x-1 transition' /> */}
         </Link>
 
         <Link
           className='group bg-white px-4 py-1 flex items-center gap-2 rounded-lg transition cursor-pointer borderBlack dark:bg-white/10'
-          href='/SOHAN_SHETTY.pdf'
+          href='#about'
           download
-          target='_blank'>
+          onClick={() => {
+            setActiveSection('Contact');
+            setTimeOfLastClick(Date.now());
+          }}>
           Learn More
           {/* <HiDownload className='opacity-60 group-hover:translate-y-1 transition' /> */}
         </Link>
